@@ -1,0 +1,32 @@
+<div class="card h-100" style="width: 18rem">
+  <div class="position-relative">
+    @if(product.availabilityStatus == "In Stock"){
+    <span
+      class="position-absolute me-3 mt-3 end-0 badge rounded-pill text-bg-success"
+      >{{ product.availabilityStatus }}</span
+    >
+    } @else{
+    <span
+      class="position-absolute me-3 mt-3 end-0 badge rounded-pill text-bg-danger"
+      >{{ product.availabilityStatus }}</span
+    >
+    }
+    <img [src]="product.images[0]" class="card-img-top" alt="..." />
+  </div>
+  <div class="card-body mb-0">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text mb-0">{{ product.description }}</p>
+    <span class="d-block text-end text-info">{{
+      product.price | currency : "EGP"
+    }}</span>
+  </div>
+  <div class="card-footer d-flex justify-content-evenly align-items-center">
+    <a href="#" class="btn btn-primary">Add to cart</a>
+    <button
+      class="btn btn-primary"
+      (click)="handelRedirictToDetails(product.id)"
+    >
+      Details
+    </button>
+  </div>
+</div>

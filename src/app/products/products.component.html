@@ -1,0 +1,9 @@
+<div class="row row-cols row-cols-xl-4 g-3 py-5 mx-3">
+  @for (product of products; track product.id) {
+  <div class="col d-flex justify-content-center">
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+  } @empty {
+  <p>List is empty</p>
+  }
+</div>
